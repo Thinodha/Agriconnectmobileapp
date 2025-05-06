@@ -56,7 +56,7 @@ class _HarvestDetailPageState extends State<Harvest_detail_page> {
             "image": "assets/images/potato.png",
           });
         }
-        if (data.containsKey('beans')) {
+        if (data.containsKey('leeks')) {
           loadedProducts.add({
             "name": "leeks",
             "price": int.parse(data['leeks']['price']),
@@ -197,7 +197,7 @@ class _HarvestDetailPageState extends State<Harvest_detail_page> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
-                              childAspectRatio: 0.8,
+                              childAspectRatio: 0.7, // Adjusted
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,
                             ),
@@ -272,7 +272,14 @@ class _HarvestDetailPageState extends State<Harvest_detail_page> {
           ),
           IconButton(
             icon: const Icon(Icons.favorite, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoritesPage(favoriteProducts: []),
+                ),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.shopping_cart, color: Colors.black),
@@ -280,7 +287,9 @@ class _HarvestDetailPageState extends State<Harvest_detail_page> {
           ),
           IconButton(
             icon: const Icon(Icons.chat_bubble, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/agriconnecthome');
+            },
           ),
         ],
       ),
@@ -313,11 +322,16 @@ class ProductCard extends StatelessWidget {
         ),
         padding: const EdgeInsets.all(8),
         child: Column(
+          mainAxisSize: MainAxisSize.min, // Fix overflow
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(image, height: 100, fit: BoxFit.cover),
+              child: Image.asset(
+                image,
+                height: 80,
+                fit: BoxFit.cover,
+              ), // Reduced height
             ),
             const SizedBox(height: 5),
             Text(
