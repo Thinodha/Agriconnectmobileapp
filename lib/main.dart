@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
             '/selectfruits':
                 (context) => FruitSelectionScreen(), // SelectVegPage route
             '/homeFarmer': (context) => FarmerHomePage(),
-            '/homeSupplier': (context) => HomeSupplier(),
+            '/homeSupplier': (context) => SupplierHomepage(),
             '/farmerRegisterSuccessfull':
                 (context) => FarmerRegisterSuccessfulPage(),
             '/farmerDetails': (context) => Harvest_detail_page(),
