@@ -279,7 +279,7 @@ class _HarvestDetailPageState extends State<Harvest_detail_page> {
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.person, color: Colors.black),
+            icon: const Icon(Icons.chat_bubble, color: Colors.black),
             onPressed: () {},
           ),
         ],
