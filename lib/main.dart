@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:project_1/screens/farmer_register_successful.dart';
 import 'package:project_1/screens/home_farmer.dart';
-import 'package:project_1/screens/home_supplier.dart';
 import 'package:project_1/screens/setupacc.dart';
 import 'package:project_1/screens/signup_page.dart';
 import 'package:project_1/screens/supplier_harvest_update.dart';
