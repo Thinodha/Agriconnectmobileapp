@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:project_1/screens/favoritepage.dart';
+import 'package:project_1/screens/supplier_cart2.dart';
 
 class SupplierHomepage extends StatelessWidget {
   const SupplierHomepage({super.key});
@@ -320,7 +322,12 @@ class SupplierHomepage extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.shopping_cart, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HarvestUpdatePage()),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.chat_bubble, color: Colors.black),
